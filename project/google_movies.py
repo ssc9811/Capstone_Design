@@ -2,7 +2,11 @@ from selenium import webdriver
 from bs4 import BeautifulSoup
 import time
 
-browser = webdriver.Chrome()
+options = webdriver.ChromeOptions()
+options.headless = True
+# options.add_argument("window-size = 1920x1080")
+
+browser = webdriver.Chrome(options=options)
 browser.maximize_window()
 
 URL = "https://play.google.com/store/movies/top"
