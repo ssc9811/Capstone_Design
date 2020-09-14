@@ -18,7 +18,9 @@ def google_movies():
     print(len(movie))
     for movies in movie:
         title = movies.find("div",{"class":"WsMG1c nnK0zc"}).get_text()
+        link = movies.find("div",{"class":"vU6FJ p63iDd"}).find("a")["href"]
         print(title)
+        print(f"https://play.google.com{link}")
 
 def google_movies_scroll_down():
     interval = 2 # 2초에 한번씩 스크롤 내림
