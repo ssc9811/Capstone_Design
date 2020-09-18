@@ -5,3 +5,5 @@ naver_weather()
 
 SEARCH = input("기사 검색 : ")
 search_news(SEARCH)
+
+

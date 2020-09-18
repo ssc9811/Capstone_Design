@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <style>
+        section{
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    </style>
+</head>
+<body>
+    <h3>{{news_title}} 관련 기사</h3>
+    <section>
+        <h4>기사 제목</h4>
+        <h4>기사 링크</h4>
+        {% for a in titles %}
+            <span>{{a.title}}</span>
+            <a href='{{a.link}}' target="_blank">Link</a>
+        {% endfor %}
+    </section>
+    
+</body>
+</html>

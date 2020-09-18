@@ -1,5 +1,5 @@
 import requests
-from bs4 import BeautifulSoup
+from bs4 import BeautifulSoup 
 
 headers = {"User-Agent":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/84.0.4147.135 Safari/537.36"}
 
@@ -23,15 +23,19 @@ def headline_news():
         print(f"제목 : {title} , 링크 : https://news.google.com/{link}")
         print("")
 
+def extract_news(new):
+    title = new.find("h3",{"class":"ipQwMb"}).get_text()
+    link = new.find("a",{"class":"VDXfz"})["href"]
+    return {'title' : title, 'link' : f"https://news.google.com/{link}"} # web에 출력하기 위해선 딕셔너리 형태로 리턴해야함.
+
 def search_news(SEARCH):
+    get_news = []
     soup = creat_soup(SEARCH)
     news = soup.find_all("div",{"class":"NiLAwe"}, limit=5)
-    for idx, new in enumerate(news):
-        title = new.find("h3",{"class":"ipQwMb"}).get_text()
-        link = new.find("a",{"class":"VDXfz"})["href"]
+    for new in news:
+        search = extract_news(new)
+        get_news.append(search)
+    return get_news
+        
 
-        print(f"{idx+1}번째 기사    제목 : {title}   링크 : https://news.google.com/{link}")
-        print("")
-    headline_news()
-    
 
