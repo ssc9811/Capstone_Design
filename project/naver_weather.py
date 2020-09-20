@@ -12,5 +12,5 @@ def naver_weather():
     todaytemp = soup.find("span",{"class":"todaytemp"}).get_text()
     min_temp = soup.find("span",{"class":"min"}).get_text()
     max_temp = soup.find("span",{"class":"max"}).get_text()
-    print(f"현재 날씨 : {todaytemp}  ({min_temp}/{max_temp})")
-    print("")
+    return {'temp' : todaytemp,  'min' : min_temp, 'max' : max_temp}
+    

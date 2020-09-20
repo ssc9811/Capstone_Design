@@ -12,9 +12,14 @@
 </head>
 
 <body>
+    <h3>현재 날씨</h3>
     <section>
-        <h4>헤드라인 기사 제목</h4>
-        <h4>기사 링크</h4>
+        <sapn>현재 온도 : {{weather.temp}}</sapn>
+        <span>최고 기온 : {{weather.max}} 최저 기온 : {{weather.min}}</span>
+    </section>
+    <section>
+        <h3>헤드라인 기사 제목</h3>
+        <h3>링크</h3>
         {% for a in headline %}
         <span>{{a.title}}</span>
         <a href='{{a.link}}' target="_blank">기사 확인</a>
