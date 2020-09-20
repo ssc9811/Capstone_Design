@@ -16,10 +16,10 @@ def google_movies():
     soup = BeautifulSoup(browser.page_source, "lxml")
     movie = soup.find_all("div",{"class":"Vpfmgd"})
     print(len(movie))
-    for movies in movie:
+    for idx, movies in enumerate(movie):
         title = movies.find("div",{"class":"WsMG1c nnK0zc"}).get_text()
         link = movies.find("div",{"class":"vU6FJ p63iDd"}).find("a")["href"]
-        print(title)
+        print((idx+1) , title)
         print(f"https://play.google.com{link}")
 
 def google_movies_scroll_down():
@@ -39,7 +39,7 @@ def google_movies_scroll_down():
         if curr_height == prev_height:
             break
         prev_height = curr_height
-        google_movies()
-
+        
 google_movies_scroll_down()
+google_movies()
 browser.quit()
