@@ -1,11 +1,12 @@
 from flask import Flask , render_template, request, redirect
-from google_news import search_news
+from google_news import search_news, headline_news
 
 app = Flask(__name__)
 
 @app.route("/")
 def home():
-    return render_template("home.html")
+    headline = headline_news()
+    return render_template("home.html", headline=headline)
 
 @app.route("/report")
 def name():
@@ -21,6 +22,5 @@ def name():
 # @app.route("/<name>")
 # def username(name):
 #     return f"당신의 이름은 {name}"
-
 
 app.run(host="127.0.0.1")
