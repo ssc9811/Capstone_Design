@@ -3,12 +3,15 @@
 
 <head>
     <meta charset="UTF-8">
+    <title>메인 화면</title>
+    <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}"> -->
     <style>
-        section{
+        section {
             display: grid;
             grid-template-columns: repeat(2, 1fr);
         }
     </style>
+
 </head>
 
 <body>
@@ -24,12 +27,18 @@
         <span>{{a.title}}</span>
         <a href='{{a.link}}' target="_blank">기사 확인</a>
         {% endfor %}
-    </section><p>
+    </section>
+    <p>
     <h3>기사 검색</h3>
     <form action="/report" method="get">
         <input type="text" name="name">
-        <input type="submit" value="전송">
+        <input type="submit" value="검색">
     </form>
+    <h3>영화 순위</h3>
+    <form action="/movies" method="get">
+        <input type="submit" value="영화 순위 보기">
+    </form>
+    
 </body>
 
 </html>

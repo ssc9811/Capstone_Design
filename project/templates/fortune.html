@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <script type="text/javascript">
+        //셀렉트 박스 미리보기
+            function selectForm(frm){ 
+                    var hiddenForms = document.getElementById("allForms"); 
+                   theForm = hiddenForms.getElementsByTagName("div"); 
+                 for(x=0; x<theForm.length; x++){ 
+                 theForm[x].style.display = "none"; 
+              } 
+              if (theForm[frm]){ 
+                theForm[frm].style.display = "block"; 
+              }  
+            } 
+        </script>
+  </head>
+  <body>
+  <form action = "/fortune" method="get">
+    <select id="selectBox" name="selectBox" onChange="selectForm(this.options[this.selectedIndex].value)" style=width:200 > 
+
+        <option>별자리를 선택해 주세요!</option> 
+     
+        <option value="0">물병자리</option> 
+     
+        <option value="1">물고기자리</option> 
+     
+        <option value="2">양자리</option>
+
+        <option value="3">황소자리</option> 
+     
+        <option value="4">쌍둥이자리</option> 
+     
+        <option value="5">게자리</option>
+
+        <option value="6">사자자리</option> 
+     
+        <option value="7">처녀자리</option> 
+     
+        <option value="8">천칭자리</option>
+
+        <option value="9">전갈자리</option> 
+     
+        <option value="10">사수자리</option> 
+     
+        <option value="11">염소자리</option>
+
+     </select>
+     <input type = "submit" value="보기">
+    </form>
+     <div id="allForms">                    
+     
+         <div style="width:725px; padding: 5px; display:none;"> 
+     
+            <img src = './images/1 Aquarius.jpg'>
+     
+          </div>
+     
+         <div style="width:725px; padding: 5px; display:none;"> 
+     
+               <img src="./images/2 Pisce.jpg" />
+     
+          </div>
+     
+          <div style="width:725px; padding: 5px; display:none;"> 
+     
+               <img src="./images/3 Aries.jpg" />
+     
+          </div>
+
+          <div style="width:725px; padding: 5px; display:none;"> 
+     
+            <img src = './images/4 Taurus.jpg'>
+     
+          </div>
+     
+         <div style="width:725px; padding: 5px; display:none;"> 
+     
+               <img src="./images/5 Gemini.jpg" />
+     
+          </div>
+     
+          <div style="width:725px; padding: 5px; display:none;"> 
+     
+               <img src="./images/6 Cancer.jpg" />
+     
+          </div>
+
+          <div style="width:725px; padding: 5px; display:none;"> 
+     
+            <img src = './images/7 Leo.jpg'>
+     
+          </div>
+     
+         <div style="width:725px; padding: 5px; display:none;"> 
+     
+               <img src="./images/8 Virgo.jpg" />
+     
+          </div>
+     
+          <div style="width:725px; padding: 5px; display:none;"> 
+     
+               <img src="./images/9 Libra.jpg" />
+     
+          </div>
+
+          <div style="width:725px; padding: 5px; display:none;"> 
+     
+            <img src = './images/10 Scorpio.jpg'>
+     
+          </div>
+     
+         <div style="width:725px; padding: 5px; display:none;"> 
+     
+               <img src="./images/11 Sagittarius.jpg" />
+     
+          </div>
+     
+          <div style="width:725px; padding: 5px; display:none; "> 
+     
+               <img src="./images/12 Capricorn.jpg" />
+     
+          </div>
+     
+     </div>
+     <h3>{{word}}</h3>
+     {{result}}
+  </body>
+</html>
