@@ -3,6 +3,7 @@ from google_news import search_news, headline_news
 from naver_weather import naver_weather
 from fortune import extract_fortune
 
+
 app = Flask(__name__)
 app.debug = True
 
@@ -19,6 +20,7 @@ def news():
     if word:
         word = word.lower()
         titles = search_news(word)
+        print(type(word))
     else:
         return redirect("/")
     return render_template("report.html", news_title=word, titles=titles)
@@ -30,7 +32,8 @@ def movies():
 @app.route("/fortune")
 def fortune():
     value = request.args.get('selectBox')
+    print(type(value))
     result = extract_fortune(value)
-    return render_template("fortune.html", word = value, result = result)
+    return render_template("test.html", value=value, result = result)
 
 app.run(host="127.0.0.1")

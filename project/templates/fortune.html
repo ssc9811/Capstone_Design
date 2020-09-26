@@ -19,7 +19,7 @@
   <form action = "/fortune" method="get">
     <select id="selectBox" name="selectBox" onChange="selectForm(this.options[this.selectedIndex].value)" style=width:200 > 
 
-        <option>별자리를 선택해 주세요!</option> 
+        <option value="12">별자리를 선택해 주세요!</option> 
      
         <option value="0">물병자리</option> 
      
@@ -123,7 +123,8 @@
           </div>
      
      </div>
-     <h3>{{word}}</h3>
+     <h3>찾은값</h3>
+     {{value}}<p>
      {{result}}
   </body>
 </html>
