@@ -60,16 +60,13 @@ browser.find_element_by_link_text("염소자리").click()
 fortune.append(search_fortune())
 
 def extract_fortune(value):
-    print(f"포츈에서 value type 값 : {type(value)}")
+    # print(f"포츈에서 value type 값 : {type(value)}")
     return fortune[int(value)]
 
 
-
-
-
-# def extract_fortune(idx):
+# def extract_fortune(value):
 #     try:
-#         WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.LINK_TEXT, a[idx]))).click()
+#         WebDriverWait(browser, 10).until(EC.presence_of_element_located((By.LINK_TEXT, fortune[int(value)]))).click()
 #         result = search_fortune()
 #         return result
 #     finally:

@@ -3,10 +3,18 @@
 <head>
     <meta charset="UTF-8">
     <title>Document</title>
+    <style>
+        section {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+        }
+    </style>
 </head>
 <body>
-    <h3>찾은값</h3>
-    {{value}}<p>
-    {{result}}
+    <section>
+        <h3>운세</h3>
+        {{value}}<p>
+        {{result}}
+    </section>
 </body>
 </html>
