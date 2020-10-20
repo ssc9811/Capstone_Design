@@ -4,13 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>메인 화면</title>
-  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-  <style>
-    section {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-    }
-  </style>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/test.css')}}">
   <script type="text/javascript">
     //셀렉트 박스 미리보기
     function selectForm(frm) {
@@ -23,149 +17,160 @@
         theForm[frm].style.display = "block";
       }
     } 
-  </script>
+  </script>  
 </head>
 
 <body>
-  <span class="js-weather">
+  <div class="container">
+    <div class="item">
+      <h3>현재 안양시 날씨</h3>
+      <span class="js-weather">
 
-  </span>
-  <h3>현재 날씨</h3>
-  <section>
-    <sapn>현재 온도 : {{weather.temp}}</sapn>
-    <span>최고 기온 : {{weather.max}} 최저 기온 : {{weather.min}}</span>
-  </section>
-  <section>
-    <h3>헤드라인 기사 제목</h3>
-    <h3>링크</h3>
-    {% for a in headline %}
-    <span>{{a.title}}</span>
-    <a href='{{a.link}}' target="_blank">기사 확인</a>
-    {% endfor %}
-  </section>
-  <p>
-  <h3>기사 검색</h3>
-  <form action="/report" method="get">
-    <input type="text" name="name">
-    <input type="submit" value="검색">
-  </form>
+      </span>
+    </div>
+    <div class="item">
+      <h3>현재 날씨</h3>
+      <sapn>현재 온도 : {{weather.temp}}</sapn>
+      <span>최고 기온 : {{weather.max}} 최저 기온 : {{weather.min}}</span>
+    </div>
+    <div class="item">
+      <h3>별자리 운세</h3>
+
+      <form action="/fortune" method="get">
+        <select id="selectBox" name="selectBox" onChange="selectForm(this.options[this.selectedIndex].value)"
+          style=width:200>
+
+          <option>별자리를 선택해 주세요!</option>
+
+          <option value="0">물병자리</option>
+
+          <option value="1">물고기자리</option>
+
+          <option value="2">양자리</option>
+
+          <option value="3">황소자리</option>
+
+          <option value="4">쌍둥이자리</option>
+
+          <option value="5">게자리</option>
+
+          <option value="6">사자자리</option>
+
+          <option value="7">처녀자리</option>
+
+          <option value="8">천칭자리</option>
+
+          <option value="9">전갈자리</option>
+
+          <option value="10">사수자리</option>
+
+          <option value="11">염소자리</option>
+
+        </select>
+        <input type="submit" value="보기">
+      </form>
+      <div id="allForms">
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/1 Aquarius.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/2 Pisce.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/3 Aries.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/4 Taurus.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/5 Gemini.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/6 Cancer.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/7 Leo.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/8 Virgo.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/9 Libra.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/10 Scorpio.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none;">
+
+          <img src="{{ url_for('static', filename='images/11 Sagittarius.jpg')}}">
+
+        </div>
+
+        <div style="width:725px; padding: 5px; display:none; ">
+
+          <img src="{{ url_for('static', filename='images/12 Capricorn.jpg')}}">
+
+        </div>
 
 
-  <h3>별자리 운세</h3>
-
-  <form action="/fortune" method="get">
-    <select id="selectBox" name="selectBox" onChange="selectForm(this.options[this.selectedIndex].value)"
-      style=width:200>
-
-      <option>별자리를 선택해 주세요!</option>
-
-      <option value="0">물병자리</option>
-
-      <option value="1">물고기자리</option>
-
-      <option value="2">양자리</option>
-
-      <option value="3">황소자리</option>
-
-      <option value="4">쌍둥이자리</option>
-
-      <option value="5">게자리</option>
-
-      <option value="6">사자자리</option>
-
-      <option value="7">처녀자리</option>
-
-      <option value="8">천칭자리</option>
-
-      <option value="9">전갈자리</option>
-
-      <option value="10">사수자리</option>
-
-      <option value="11">염소자리</option>
-
-    </select>
-    <input type="submit" value="보기">
-  </form>
-  <div id="allForms">
-
-    <div style="width:725px; padding: 5px; display:none;">
-
-      <img src="{{ url_for('static', filename='images/1 Aquarius.jpg')}}">
-
+      </div>
+    </div>
+    <div class="item">
+      <h3>영화 순위</h3>
+      <form action="/movies" methond="get">
+        <input type="submit" value="순위 검색">
+      </form>
     </div>
 
-    <div style="width:725px; padding: 5px; display:none;">
-
-      <img src="{{ url_for('static', filename='images/2 Pisce.jpg')}}">
-
+    <div class="item">
+      <h3>헤드라인 기사 제목</h3>
+      <section>
+        {% for a in headline %}
+        <span><a href='{{a.link}}' target="_blank">{{a.title}}</a></span><br>
+        {% endfor %}
+      </section>
     </div>
-
-    <div style="width:725px; padding: 5px; display:none;">
-
-      <img src="{{ url_for('static', filename='images/3 Aries.jpg')}}">
-
+    <div class="item">
+      <h3>기사 검색</h3>
+      <form action="/report" method="get">
+        <input type="text" name="name">
+        <input type="submit" value="검색">
+      </form>
     </div>
-
-    <div style="width:725px; padding: 5px; display:none;">
-
-      <img src="{{ url_for('static', filename='images/4 Taurus.jpg')}}">
-
-    </div>
-
-    <div style="width:725px; padding: 5px; display:none;">
-      
-      <img src="{{ url_for('static', filename='images/5 Gemini.jpg')}}">
-      
-    </div>
-    
-    <div style="width:725px; padding: 5px; display:none;">
-      
-      <img src="{{ url_for('static', filename='images/6 Cancer.jpg')}}">
-
-    </div>
-
-    <div style="width:725px; padding: 5px; display:none;">
-
-      <img src="{{ url_for('static', filename='images/7 Leo.jpg')}}">
-
-    </div>
-
-    <div style="width:725px; padding: 5px; display:none;">
-
-      <img src="{{ url_for('static', filename='images/8 Virgo.jpg')}}">
-
-    </div>
-
-    <div style="width:725px; padding: 5px; display:none;">
-
-      <img src="{{ url_for('static', filename='images/9 Libra.jpg')}}">
-
-    </div>
-
-    <div style="width:725px; padding: 5px; display:none;">
-
-      <img src="{{ url_for('static', filename='images/10 Scorpio.jpg')}}">
-
-    </div>
-
-    <div style="width:725px; padding: 5px; display:none;">
-
-      <img src="{{ url_for('static', filename='images/11 Sagittarius.jpg')}}">
-
-    </div>
-
-    <div style="width:725px; padding: 5px; display:none; ">
-
-      <img src="{{ url_for('static', filename='images/12 Capricorn.jpg')}}">
-
-    </div>
-
   </div>
 
-  <form action="/movies" methond="get">
-    <input type="submit" value="영화순위">
-
-    <script src="{{ url_for('static', filename='js/weather.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/weather.js')}}"></script>
 </body>
 
 </html>
