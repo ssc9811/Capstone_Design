@@ -11,18 +11,24 @@ app.debug = True
 def home():
     headline = headline_news()
     weather = naver_weather()
-    return render_template("home.html", headline=headline, weather=weather)
-
-@app.route("/report")
-def news():
     word = request.args.get('name')
     if word:
         word = word.lower()
         titles = search_news(word)
-        print(type(word))
     else:
         return redirect("/")
-    return render_template("report.html", news_title=word, titles=titles)
+    return render_template("home.html", headline=headline, weather=weather, news_title=word, titles=titles)
+
+# @app.route("/")
+# def news():
+#     word = request.args.get('name')
+#     if word:
+#         word = word.lower()
+#         titles = search_news(word)
+#         print(type(word))
+#     else:
+#         return redirect("/")
+#     return render_template("home.html", news_title=word, titles=titles)
 
 # @app.route("/movies")
 # def movies():
