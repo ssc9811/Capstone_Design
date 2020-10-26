@@ -168,14 +168,14 @@
       </div>
       <div class="nocenter">
         <h3>기사 검색</h3>
-        <form action="/" method="get">
-          <input type="text" name="name">
+        <form action="/report" method="get">
+          <input type="text" name="title">
           <input type="submit" value="검색">
         </form>
         <section>
           <h3>{{news_title}} 관련 기사</h3>
           {% for a in titles %}
-          <a href='{{a.link}}' target="_blank">{{a.title}}</a>
+          <a href='{{a.link}}' target="_blank">{{a.title}}</a><br>
           {% endfor %}
         </section>
       </div>
