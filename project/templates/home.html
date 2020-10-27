@@ -5,31 +5,13 @@
   <meta charset="UTF-8">
   <title>메인 화면</title>
   <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-  <script type="text/javascript">
-    //셀렉트 박스 미리보기
-    function selectForm(frm) {
-      var hiddenForms = document.getElementById("allForms");
-      theForm = hiddenForms.getElementsByTagName("div");
-      for (x = 0; x < theForm.length; x++) {
-        theForm[x].style.display = "none";
-      }
-      if (theForm[frm]) {
-        theForm[frm].style.display = "inline";
-      }
-    } 
-  </script>
 </head>
 
 <body>
-
-    <div class="title">
-      <center>
-        <a href="/">
-          <h1>Daily News</h1>
-        </a>
-      </center>
-    </div>
-    <hr>
+  
+  <div class="title">
+    <a href="/"><h1>Daily News</h1></a>
+  </div>
     <div class="container">
       <div class="item">
         <h3>현재 안양시 날씨</h3>
@@ -190,8 +172,9 @@
     <!-- 마지막 -->
     </div>
   
-
+  <script src="{{ url_for('static', filename='js/fortune.js')}}"></script>
   <script src="{{ url_for('static', filename='js/weather.js')}}"></script>
+  
 
 </body>
 

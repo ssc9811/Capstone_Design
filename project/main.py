@@ -1,8 +1,8 @@
 from flask import Flask , render_template, request, redirect
 from google_news import search_news, headline_news
 from naver_weather import naver_weather
-from fortune import extract_fortune
-from google_movies import google_movies
+# from fortune import extract_fortune
+# from google_movies import google_movies
 
 app = Flask(__name__)
 app.debug = True
@@ -25,16 +25,16 @@ def news():
         return redirect("/")
     return render_template("home.html", news_title=word, titles=titles, headline=headline, weather=weather)
 
-@app.route("/movies")
-def movies():
-    movies = google_movies()
-    return render_template("movies.html", movies=movies)
+# @app.route("/movies")
+# def movies():
+#     movies = google_movies()
+#     return render_template("movies.html", movies=movies)
 
-@app.route("/fortune")
-def fortune():
-    value = request.args.get('selectBox')
-    # print(type(value))
-    result = extract_fortune(value)
-    return render_template("fortune.html", result=result)
+# @app.route("/fortune")
+# def fortune():
+#     value = request.args.get('selectBox')
+#     # print(type(value))
+#     result = extract_fortune(value)
+#     return render_template("fortune.html", result=result)
 
 app.run(host="127.0.0.1")

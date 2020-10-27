@@ -3,21 +3,33 @@
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr)
 }
-
+body {
+    margin: 0;
+}
 .item {
     text-align: center;    
 }
+h1 {
+    text-align :center;
+    border-bottom:1px solid black;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin: 0;
+}
 
-
-.title a:hover{
+.title a:hover,.title a:visited{
     color:black;
     text-decoration: none;
 }
-  a:link, :visited {
-    color: gray;
+  a:link {
+    color: black;
     text-decoration: none; 
   }
-
+  a:visited {
+      color: gray;
+      text-decoration: none;
+  }
+  
   a:hover {
       color: blue;
       text-decoration: underline;
