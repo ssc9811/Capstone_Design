@@ -15,12 +15,17 @@
 # for i, constellation in enumerate(constellations):
 #     fortune.append(constellation)
     
-a = "1"
-b = [1 ,2 ,3 ,4]
+# a = "1"
+# b = [1 ,2 ,3 ,4]
 
-def test(a):
-    print(a)
-    print(type(int(a)))
-    print(b[int(a)])
+# def test(a):
+#     print(a)
+#     print(type(int(a)))
+#     print(b[int(a)])
 
-test(a)
+# test(a)
+a = ['a','b','c','d','e','f','g','h','i','j']
+
+for i, b in enumerate(a):
+    print(i+1)
+    print(b)
