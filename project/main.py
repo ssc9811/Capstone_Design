@@ -30,12 +30,19 @@ def news():
 #     movies = google_movies()
 #     return render_template("movies.html", movies=movies)
 
+@app.route("/fortune_select")
+def fortune_select():
+    headline = headline_news()
+    weather = naver_weather()
+    return render_template("fortune_select.html", headline=headline, weather=weather)
+
 @app.route("/fortune")
 def fortune():
     headline = headline_news()
     weather = naver_weather()
     value = request.args.get('selectBox')
     result = extract_fortune(value)
-    return render_template("home.html", headline=headline, weather=weather, result=result)
+    return render_template("fortune.html", headline=headline, weather=weather, result=result)
+
 
 app.run(host="127.0.0.1")
