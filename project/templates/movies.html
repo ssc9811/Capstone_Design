@@ -4,24 +4,38 @@
     <meta charset="UTF-8">
     <title>영화순위</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-    <style>
-        section {
-            display: grid;
-            grid-template-columns: 250px 1fr;
-        }
-    </style>
+
 </head>
 <body>
-  <div class="title">
-    <a href="/"><h1>Daily News</h1></a>
-  </div>
-    <section>
-        <h4>영화 순위</h4>
-        <h4>영화 제목</h4>
-        {% for a in movies %}
-            <span>{{a.idx}}</span>
-            <span><a href='{{a.link}}' target="_blank">{{a.title}}</a></span>
+    <div class="title">
+        <div class="subtitle">
+            <span class="js-weather"></span>
+        </div>
+        <a href="/">
+            <h1>Daily News</h1>
+        </a>
+        <div class="subtitle">
+            <span>최고 기온 : {{weather.max}} </span><br>
+            <sapn>최저 기온 : {{weather.min}} </sapn>
+        </div>
+    </div>
+    <div class="container">
+        <div class="item" >
+          <ul id="list"> 
+            <a href="/"><li>기사</li></a><br><br><br>
+            <a href="/movies"><li>영화</li></a><br><br><br>
+            <a href="/fortune_select"><li>운세</li></a><br><br><br>
+            <li>영어</li><br><br><br>
+            <li>노트</li><br><br><br>
+          </ul>
+        </div>
+        <div class="item" style="text-align:left;">
+        {% for movie in movies %}
+            <div>{{movie.idx}} <a href='{{movie.link}}' target="_blank">{{movie.title}}</a></div>
+            <div>평점 : {{movie.rate}} -- {{movie.reple}}</div><br>
         {% endfor %}
-    </section>
+    </div>
+    </div>
+    <script src="{{ url_for('static', filename='js/weather.js')}}"></script>
 </body>
 </html>
