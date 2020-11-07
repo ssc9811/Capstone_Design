@@ -45,5 +45,9 @@ def fortune():
     result = extract_fortune(value)
     return render_template("fortune.html", headline=headline, weather=weather, result=result)
 
+@app.route("/todo")
+def todo():
+    weather = naver_weather()
+    return render_template("todo.html", weather=weather)
 
 app.run(host="127.0.0.1")

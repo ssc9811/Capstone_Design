@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
-    <title>영화순위</title>
+    <title>Document</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
-
 </head>
+
 <body>
     <div class="title">
         <div class="subtitle">
@@ -19,8 +20,9 @@
             <sapn>최저 기온 : {{weather.min}} </sapn>
         </div>
     </div>
+
     <div class="container">
-        <div class="item" >
+        <div class="item">
             <ul id="list"> 
                 <a href="/"><li>기사</li></a><br><br><br>
                 <a href="/movies"><li>영화</li></a><br><br><br>
@@ -29,13 +31,16 @@
                 <a href="/todo"><li>ToDo</li></a><br><br><br>
               </ul>
         </div>
-        <div class="item" style="text-align:left;">
-        {% for movie in movies %}
-            <div>{{movie.idx}} <a href='{{movie.link}}' target="_blank">{{movie.title}}</a></div>
-            <div>평점 : {{movie.rate}} -- {{movie.reple}}</div><br>
-        {% endfor %}
-    </div>
-    </div>
-    <script src="{{ url_for('static', filename='js/weather.js')}}"></script>
+
+        <div class="item">
+            <form class="js-toDoForm">
+                <input type="text" placeholder="Write a to do" />
+            </form>
+            <ul class="js-toDolist">
+            </ul>
+        </div>
+        <script src="{{ url_for('static', filename='js/weather.js')}}"></script>
+        <script src="{{ url_for('static', filename='js/todo.js')}}"></script>
 </body>
+
 </html>
