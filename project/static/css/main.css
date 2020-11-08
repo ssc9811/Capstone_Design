@@ -11,12 +11,18 @@ body {
     padding-top: 0;
     margin: 0;
 }
+.title a h1{
+    padding-left: 300px;
+}
 .item {
     text-align: center;
     border-right:1px solid black;
     
 }
-
+.result_padding{
+    padding-left: 450px;
+    padding-right: 450px;
+}
 .title {
     text-align :center;
     border-bottom:1px solid black;
@@ -46,7 +52,8 @@ body {
       text-decoration: underline;
   }
 #allForms {
-    text-align: left;
+    text-align: center;
+    display: flex;
 }
 
 

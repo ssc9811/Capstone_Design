@@ -5,6 +5,7 @@ from fortune import extract_fortune
 from naver_movie_rank import naver_movie
 from naver_on_screen import on_screen
 
+
 app = Flask(__name__)
 app.debug = True
 
