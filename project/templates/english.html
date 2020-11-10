@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>메인 화면</title>
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
+</head>
+
+<body>
+  <div class="title">
+    <div class="subtitle">
+      <span class="js-weather"></span>
+    </div>
+    <a href="/">
+      <h1>Daily News</h1>
+    </a>
+    <div class="subtitle">
+      <span>최고 기온 : {{weather.max}} </span><br>
+      <sapn>최저 기온 : {{weather.min}} </sapn>
+    </div>
+  </div>
+  
+
+<div class="container">
+  <div class="item">
+    <ul id="list"> 
+      <a href="/"><li>기사</li></a><br><br><br>
+      <a href="/movie_rank"><li>영화</li></a><br><br><br>
+      <a href="/fortune_select"><li>운세</li></a><br><br><br>
+      <a href="/english"><li>영어</li></a><br><br><br>
+    </ul>
+  </div>
+  <div class="item">
+      <section>
+          1
+          {% for a in english1 %}
+            <div>{{a.eng}}</div>
+            <div>{{a.kor}}</div><br>
+          {% endfor %}
+          2
+          {% for a in english2 %}
+            <div>{{a.eng}}</div>
+            <div>{{a.kor}}</div><br>
+          {% endfor %}
+          3
+          {% for a in english3 %}
+            <div>{{a.eng}}</div>
+            <div>{{a.kor}}</div><br>
+          {% endfor %}
+        </section>
+        <h3>Note</h3>
+    <section>
+            <form class="js-toDoForm">
+                <input type="textarea" placeholder="Memo" size="25"/>
+            </form>
+            <ul class="js-toDolist">
+            </ul>
+    </section>
+  </div>
+</div>
+
+  <script src="{{ url_for('static', filename='js/weather.js')}}"></script>
+  <script src="{{ url_for('static', filename='js/todo.js')}}"></script>
+  
+
+
+</body>
+
+</html>

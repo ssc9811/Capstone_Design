@@ -1,15 +1,21 @@
 .container {
     display: grid;
     grid-template-columns: 300px 1fr;
+    grid-template-rows: 2fr 1fr;
 }
 body {
     margin: 0;
 }
 #list {
-    
-    padding-bottom: 0;
-    padding-top: 0;
+    padding-bottom: 0px;
+    padding-top: 0px;
     margin: 0;
+    padding-bottom: 500px;
+    padding-left: 0px;
+}
+#list li{
+    padding-bottom: 25px;
+    padding-top: 25px;
 }
 .title a h1{
     padding-left: 300px;
@@ -46,14 +52,15 @@ body {
       color: gray;
       text-decoration: none;
   }
-  
-  a:hover {
-      color: blue;
-      text-decoration: underline;
-  }
 #allForms {
     text-align: center;
     display: flex;
 }
-
-
+.item div span{
+    font-size: 25px;
+    border: 1px black solid;
+    padding-left: 50px;
+    margin-left: 380px;
+    padding-right: 50px;
+    margin-right: 50px;
+}

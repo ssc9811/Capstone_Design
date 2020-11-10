@@ -1,6 +1,5 @@
 import requests
 from bs4 import BeautifulSoup
-from selenium import webdriver
 import time
 from datetime import datetime
 
@@ -17,13 +16,11 @@ def naver_movie():
     lis = movie.find_all("tr")
 
     movie_rank = []
-    movie_link = []
     reple = []
     i=0
 
     def naver_review(link):
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"}
-        # for idx in range(0, len(movie_link)):
         url2 = (f"https://movie.naver.com{link}")
         res = requests.get(url2, headers=headers)
         res.raise_for_status()
