@@ -1,11 +1,15 @@
 .container {
     display: grid;
-    grid-template-columns: 300px 1fr;
+    grid-template-columns: 230px 1fr;
     grid-template-rows: 2fr 1fr;
 }
 body {
-    margin: 0;
-}
+	font-family: Verdana, Arial, Helvetica, sans-serif;
+	font-size: 80%;
+	font-weight: bold;
+	background: #FFF;
+	margin: 0;
+	}
 #list {
     padding-bottom: 0px;
     padding-top: 0px;
@@ -18,7 +22,7 @@ body {
     padding-top: 25px;
 }
 .title a h1{
-    padding-left: 300px;
+    padding-left: 225px;
 }
 .item {
     text-align: center;
@@ -40,7 +44,7 @@ body {
     text-align: left;
 }
 
-.title a:hover,.title a:visited{
+.title a:hover, .title a:visited{
     color:black;
     text-decoration: none;
 }
@@ -64,3 +68,49 @@ body {
     padding-right: 50px;
     margin-right: 50px;
 }
+
+h1 {
+	font-family:Verdana, Arial, Helvetica, sans-serif;
+	font-size:16px;
+	font-weight:bold;
+	margin:0;
+	padding:0;
+	}
+
+hr {
+	border:none;
+	border-top:1px solid #CCCCCC;
+	height:1px;
+	margin-bottom:25px;
+	}
+
+img {
+	border: none;
+	}
+	
+#menu {
+	width: 200px;
+    margin: 10px;
+	}
+	
+#menu li a {
+    text-align: center;
+	height: 32px;
+  	voice-family: "\"}\""; 
+  	voice-family: inherit;
+  	height: 24px;
+	text-decoration: none;
+	}	
+	
+#menu li a:link, #menu li a:visited {
+	color: #333;
+    display: block;
+    background: url(menu.gif);
+	padding: 8px 0 0 10px;
+	}
+	
+#menu li a:hover {
+	color: #FFF;
+	background:  url(menu.gif) 0 -32px;
+	padding: 8px 0 0 10px;
+	}

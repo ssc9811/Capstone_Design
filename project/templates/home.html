@@ -25,13 +25,15 @@
 
 <div class="container">
   <div class="item">
+    <div id = "menu">
     <ul id="list"> 
-      <a href="/"><li>기사</li></a><br><br><br>
-      <a href="/movie_rank"><li>영화</li></a><br><br><br>
-      <a href="/fortune_select"><li>운세</li></a><br><br><br>
-      <a href="/english"><li>영어</li></a><br><br><br>
+      <li><a href="/">기사</a><br><br><br></li>
+      <li><a href="/movie_rank">영화</a><br><br><br></li>
+      <li><a href="/fortune_select">운세</a><br><br><br></li>
+      <li><a href="/english">영어</a><br><br><br></li>
     </ul>
   </div>
+</div>
   <div class="item">
     <h3>헤드라인 기사 제목</h3>
     <section>
@@ -52,28 +54,7 @@
     </section>
   </div>
 </div>
-<!--       
-        
-      
-  <h3>영화 순위</h3>
-    <form action="/movies" methond="get">
-      <input type="submit" value="순위 검색">
-    </form>
-      
-     
-      
 
-      
-
-      
-
-    
-
-
-    
-  </div> -->
-
-  
   <script src="{{ url_for('static', filename='js/weather.js')}}"></script>
   
 
