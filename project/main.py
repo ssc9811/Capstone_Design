@@ -1,8 +1,10 @@
 from flask import Flask , render_template, request, redirect
 from google_news import search_news, headline_news
 from naver_weather import naver_weather
-# from fortune import extract_fortune
-from naver_movie_rank import naver_movie
+from fortune import extract_fortune
+# from naver_movie_rank import naver_movie
+from select_movie_rank import select_movie
+from select_on_screen import select_on
 from naver_on_screen import on_screen
 from english import r1, r2, r3
 
@@ -23,7 +25,13 @@ def account():
 def home():
     headline = headline_news()
     weather = naver_weather()
-    return render_template("home.html", headline=headline, weather=weather)
+    return render_template("index.html", headline=headline, weather=weather)
+
+
+@app.route("/home")
+def test():
+    weather = naver_weather()
+    return render_template("home.html",weather=weather)
 
 @app.route("/report")
 def news():
@@ -40,28 +48,29 @@ def news():
 @app.route("/movie_rank")
 def movies():
     weather = naver_weather()
-    movies = naver_movie()
+    movies = select_movie()
     return render_template("movie_rank.html", weather=weather, movies=movies)
     
 @app.route("/on_screen")
 def movie():
     weather = naver_weather()
-    movies = on_screen()
+    movies = select_on()
     return render_template("on_screen.html", weather=weather, movies=movies)
 
-# @app.route("/fortune_select")
-# def fortune_select():
-#     headline = headline_news()
-#     weather = naver_weather()
-#     return render_template("fortune_select.html", headline=headline, weather=weather)
 
-# @app.route("/fortune")
-# def fortune():
-#     headline = headline_news()
-#     weather = naver_weather()
-#     value = request.args.get('selectBox')
-#     result = extract_fortune(value)
-#     return render_template("fortune.html", headline=headline, weather=weather, result=result)
+@app.route("/fortune_select")
+def fortune_select():
+    headline = headline_news()
+    weather = naver_weather()
+    return render_template("fortune_select.html", headline=headline, weather=weather)
+
+@app.route("/fortune")
+def fortune():
+    headline = headline_news()
+    weather = naver_weather()
+    value = request.args.get('selectBox')
+    result = extract_fortune(value)
+    return render_template("fortune.html", headline=headline, weather=weather, result=result)
 
 @app.route("/english")
 def en():

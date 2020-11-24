@@ -31,39 +31,55 @@
         <div class="wrapper wrapper--w790">
             <div class="card card-5">
                 <div class="card-heading">
-                    <h2 class="title">Event Registration Form</h2>
+                    <h2 class="title">회원가입</h2>
                 </div>
                 <div class="card-body">
                     <form method="POST">
                         <div class="form-row m-b-55">
-                            <div class="name">Name</div>
+                            <div class="name">이름</div>
                             <div class="value">
                                 <div class="row row-space">
                                     <div class="col-2">
                                         <div class="input-group-desc">
                                             <input class="input--style-5" type="text" name="first_name">
-                                            <label class="label--desc">first name</label>
+                                            <label class="label--desc">성</label>
                                         </div>
                                     </div>
                                     <div class="col-2">
                                         <div class="input-group-desc">
                                             <input class="input--style-5" type="text" name="last_name">
-                                            <label class="label--desc">last name</label>
+                                            <label class="label--desc">이름</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Company</div>
+                            <div class="name">아이디</div>
                             <div class="value">
                                 <div class="input-group">
-                                    <input class="input--style-5" type="text" name="company">
+                                    <input class="input--style-5" type="password" name="company">
                                 </div>
                             </div>
                         </div>
                         <div class="form-row">
-                            <div class="name">Email</div>
+                            <div class="name">비밀번호</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="password" name="company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">비밀번호 확인</div>
+                            <div class="value">
+                                <div class="input-group">
+                                    <input class="input--style-5" type="password" name="company">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="name">이메일</div>
                             <div class="value">
                                 <div class="input-group">
                                     <input class="input--style-5" type="email" name="email">
@@ -71,55 +87,25 @@
                             </div>
                         </div>
                         <div class="form-row m-b-55">
-                            <div class="name">Phone</div>
+                            <div class="name">전화번호</div>
                             <div class="value">
                                 <div class="row row-refine">
                                     <div class="col-3">
                                         <div class="input-group-desc">
-                                            <input class="input--style-5" type="text" name="area_code">
-                                            <label class="label--desc">Area Code</label>
+                                            <input class="input--style-5" type="selectbox" name="area_code" placeholder="010">
                                         </div>
                                     </div>
                                     <div class="col-9">
                                         <div class="input-group-desc">
                                             <input class="input--style-5" type="text" name="phone">
-                                            <label class="label--desc">Phone Number</label>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="form-row">
-                            <div class="name">Subject</div>
-                            <div class="value">
-                                <div class="input-group">
-                                    <div class="rs-select2 js-select-simple select--no-search">
-                                        <select name="subject">
-                                            <option disabled="disabled" selected="selected">Choose option</option>
-                                            <option>Subject 1</option>
-                                            <option>Subject 2</option>
-                                            <option>Subject 3</option>
-                                        </select>
-                                        <div class="select-dropdown"></div>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="form-row p-t-20">
-                            <label class="label label--block">Are you an existing customer?</label>
-                            <div class="p-t-15">
-                                <label class="radio-container m-r-55">Yes
-                                    <input type="radio" checked="checked" name="exist">
-                                    <span class="checkmark"></span>
-                                </label>
-                                <label class="radio-container">No
-                                    <input type="radio" name="exist">
-                                    <span class="checkmark"></span>
-                                </label>
-                            </div>
-                        </div>
+                      
                         <div>
-                            <button class="btn btn--radius-2 btn--red" type="submit">Register</button>
+                            <button class="btn btn--radius-2 btn--red" type="submit">확인</button>
                         </div>
                     </form>
                 </div>

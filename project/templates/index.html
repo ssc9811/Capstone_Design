@@ -1,22 +1,232 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
-<html xmlns="http://www.w3.org/1999/xhtml">
-<head>
-<title>56</title>
-<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
-<link rel="stylesheet" href="styles.css" type="text/css" />
-</head>
-<body>
-<hr />
-<div id="menu">
-  <ul>
-    <li><a href="http://www.free-css.com/">CSS Templates</a></li>
-    <li><a href="http://www.free-css.com/">CSS Layouts</a></li>
-    <li><a href="http://www.free-css.com/">CSS Books</a></li>
-    <li><a href="http://www.free-css.com/">CSS Menus</a></li>
-    <li><a href="http://www.free-css.com/">CSS Tutorials</a></li>
-    <li><a href="http://www.free-css.com/">CSS Reference</a></li>
-    <li><a rel="nofollow" target="_blank" href="http://www.exploding-boy.com/" title="explodingboy">explodingboy</a></li>
-  </ul>
-</div>
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="stylesheet" href="{{ url_for('static', filename='https://fonts.googleapis.com/css?family=Roboto:100,300,400,500,700')}}">
+
+    <title>Daily News</title>
+
+    <!-- Bootstrap core CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='vendor/bootstrap/css/bootstrap.min.css')}}">
+
+
+    <!-- Additional CSS Files -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/fontawesome.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/templatemo-style.css')}}">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/owl.css')}}">
+
+  </head>
+
+<body class="is-preload">
+
+    <!-- Wrapper -->
+    <div id="wrapper">
+
+      <!-- Main -->
+        <div id="main">
+          <div class="inner">
+
+            <!-- Header -->
+            <header id="header">
+              
+              <div class="logo">
+                <a href="index.html">Daily News</a>
+              </div>
+            </header>
+              
+            <!-- Banner -->
+            <section class="main-banner">
+              <div class="container-fluid">
+                <div>
+                  <div class="js-weather"></div>
+                  최고 기온 : {{weather.max}} <br>
+                  최저 기온 : {{weather.min}} 
+            </div>
+                <div class="row">
+                  <div class="col-md-12">
+                    <div class="banner-content">
+                      <div class="row">
+                        <div class="col-md-12">
+                          <div class="banner-caption">
+                            <h4>환영합니다<br> <em>Daily New</em></h4>
+                            
+                            <div class="primary-button">
+                            
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                
+              </div>
+            </section>
+
+            <!-- Services -->
+            <!-- <section class="services">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-4">
+                    <div class="service-item first-item">
+                      <div class="icon"></div>
+                      <h4>Web Design</h4>
+                      <p>Credit goes to <a rel="nofollow" href="https://www.pexels.com">Pexels</a> and <a rel="nofollow" href="https://www.rawpixel.com">Raw Pixel</a> for images used in this template. Thank you.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item second-item">
+                      <div class="icon"></div>
+                      <h4>Bootstrap 4</h4>
+                      <p>Proin aliquam facilisis ante interdum. Sed nulla feugiat tempus aliquam.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item third-item">
+                      <div class="icon"></div>
+                      <h4>HTML CSS</h4>
+                      <p>Proin aliquam facilisis ante interdum. Sed nulla feugiat tempus aliquam.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item fourth-item">
+                      <div class="icon"></div>
+                      <h4>Download Free</h4>
+                      <p>We have many free to use CSS web templates on our site for you.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item fivth-item">
+                      <div class="icon"></div>
+                      <h4>Get in touch</h4>
+                      <p>You can get the fastest response from <a rel="nofollow" href="https://www.facebook.com/templatemo">templatemo</a> facebook page.</p>
+                    </div>
+                  </div>
+                  <div class="col-md-4">
+                    <div class="service-item sixth-item">
+                      <div class="icon"></div>
+                      <h4>Spread a word</h4>
+                      <p>Please tell your friends about our website. This is very helpful.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section> -->
+
+            <!-- Top Image -->
+            <!-- <section class="top-image">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-12">
+                    <img src="assets/images/top-image.jpg" alt="">
+                    <div class="down-content">
+                      <h4>Ante Interdum Chambray</h4>
+                      <p>Lorem ipsum dolor amet raclette chambray bitters, hammock celiac slow-carb flexitarian four dollar toast food truck health goth. Air plant brunch food truck vegan scenester organic crucifix irony pour-over pop-up austin hexagon kitsch swag. Godard literally humblebrag cloud bread vice master cleanse chambray typewriter put a bird on it brooklyn forage.</p>
+                      <div class="primary-button">
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section> -->
+
+            <!-- Left Image -->
+            <!-- <section class="left-image">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <img src="assets/images/left-image.jpg" alt="">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="right-content">
+                      <h4>Ante Interdum Raclette</h4>
+                      <p>Lorem ipsum dolor amet raclette chambray bitters, hammock celiac slow-carb flexitarian four dollar toast food truck health goth. Air plant brunch food truck vegan scenester organic crucifix irony pour-over pop-up austin hexagon kitsch swag. Godard literally humblebrag cloud bread vice master cleanse chambray typewriter put a bird on it brooklyn forage.<br><br>Air plant brunch food truck vegan scenester organic crucifix irony pour-over pop-up austin hexagon kitsch swag. Godard literally humblebrag cloud bread vice master cleanse chambray typewriter put bird brooklyn</p>
+                      <div class="primary-button">
+                        <a href="#">Read More</a>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section> -->
+
+            <!-- Right Image -->
+           <section class="right-image">
+              <div class="container-fluid">
+                <div class="row">
+                  <div class="col-md-6">
+                    <div class="left-content">
+                      {% block content %}
+                      {% endblock %}
+                      <div class="primary-button">
+                        
+                      </div>
+                    </div>
+                  </div>
+                  
+                </div>
+              </div>
+            </section>
+
+          </div>
+        </div>
+
+      <!-- Sidebar -->
+        <div id="sidebar">
+
+          <div class="inner">
+
+            <!-- Search Box -->
+            <section id="search" class="alt">
+              <form method="get" action="#">
+                <input type="text" name="search" id="search" placeholder="Search..." />
+              </form>
+            </section>
+              
+            <!-- Menu -->
+            <nav id="menu">
+              <ul>
+                <a href="/home"><li>NEWS</li></a>
+                <a href="/fortune_select"><li>FORTUNE</li></a>
+                <a href="/english"><li>ENGLISH</li></a>
+                <li>
+                  <span class="opener">MOVIES</span>
+                  <ul>
+                    <li><a href="/movie_rank">MOVIE RANKING</a></li>
+                    <li><a href="/on_screen">CURRENT RUNNING MOVIE</a></li>
+                  </ul>
+                </li>
+                
+                <li><a href="https://www.google.com">GOOGLE</a></li>
+              </ul>
+            </nav>
+
+            
+          </div>
+        </div>
+
+    </div>
+
+  <!-- Scripts -->
+  <!-- Bootstrap core JavaScript -->
+    <script src="{{ url_for('static', filename='vendor/jquery/jquery.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/browser.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/breakpoints.min.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/transition.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/owl-carousel.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/custom.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/weather.js')}}"></script>
+    <script src="{{ url_for('static', filename='js/fortune.js')}}"></script>
 </body>
+
+
+  </body>
+
 </html>

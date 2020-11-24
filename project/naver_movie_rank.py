@@ -1,7 +1,9 @@
 import requests
 from bs4 import BeautifulSoup
+from selenium import webdriver
 import time
 from datetime import datetime
+import pymysql
 
 headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"}
 
@@ -17,7 +19,26 @@ def naver_movie():
 
     movie_rank = []
     reple = []
-    i=0
+    i = 0
+
+    mr_db = pymysql.connect(
+        user='root', 
+        passwd='1234', 
+        host='127.0.0.1', 
+        db='daliydb', 
+        charset='utf8'
+    )
+
+    cursor = mr_db.cursor(pymysql.cursors.DictCursor)
+
+    set_sql = "delete from movie_rank;" #삭제
+    set_rank = "ALTER TABLE movie_rank AUTO_INCREMENT = 1;" #AUTO_INCREMENT 초기화
+    sql = "insert into movie_rank (title, link, rate, reple) values(%s,%s,%s,%s);"
+    sss = "select * from movie_rank;"
+    
+    cursor.execute(set_sql)
+    cursor.execute(set_rank)
+    mr_db.commit()
 
     def naver_review(link):
         headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"}
@@ -36,12 +57,16 @@ def naver_movie():
             link = movies.find("div",{"class":"tit5"}).find("a")["href"]
             naver_review(link)
             rate = movies.find("td",{"class":"point"}).get_text()
-            result = {'idx' : i+1, 'title' : title, 'link' : f"https://movie.naver.com{link}", 'rate' : rate, 'reple' : reple[i]}
-            movie_rank.append(result)
-            i+=1
+            db_rs = title,f"https://movie.naver.com{link}",rate,reple[i]
+            cursor.execute(sql,db_rs)
+            mr_db.commit()
+            i += 1
         except AttributeError as e:
             continue
-
+    cursor.execute(sss)
+    s1 = cursor.fetchall()
+    # print(s1)
     return movie_rank
+# naver_movie()
 
 

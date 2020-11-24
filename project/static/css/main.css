@@ -3,45 +3,16 @@
     grid-template-columns: 230px 1fr;
     grid-template-rows: 2fr 1fr;
 }
-body {
-	font-family: Verdana, Arial, Helvetica, sans-serif;
-	font-size: 80%;
-	font-weight: bold;
-	background: #FFF;
-	margin: 0;
-	}
-#list {
-    padding-bottom: 0px;
-    padding-top: 0px;
-    margin: 0;
-    padding-bottom: 500px;
-    padding-left: 0px;
-}
-#list li{
-    padding-bottom: 25px;
-    padding-top: 25px;
-}
-.title a h1{
-    padding-left: 225px;
-}
+
 .item {
     text-align: center;
-    border-right:1px solid black;
-    
 }
-.result_padding{
-    padding-left: 450px;
-    padding-right: 450px;
-}
-.title {
-    text-align :center;
-    border-bottom:1px solid black;
-    padding-bottom: 0;
-    padding-top: 0;
-    margin: 0;
-}
-.subtitle{
+
+#header .title .subtitle{
     text-align: left;
+    text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #fff;
 }
 
 .title a:hover, .title a:visited{
@@ -60,57 +31,7 @@ body {
     text-align: center;
     display: flex;
 }
-.item div span{
-    font-size: 25px;
-    border: 1px black solid;
-    padding-left: 50px;
-    margin-left: 380px;
-    padding-right: 50px;
-    margin-right: 50px;
-}
-
-h1 {
-	font-family:Verdana, Arial, Helvetica, sans-serif;
-	font-size:16px;
-	font-weight:bold;
-	margin:0;
-	padding:0;
-	}
-
-hr {
-	border:none;
-	border-top:1px solid #CCCCCC;
-	height:1px;
-	margin-bottom:25px;
-	}
-
 img {
 	border: none;
 	}
 	
-#menu {
-	width: 200px;
-    margin: 10px;
-	}
-	
-#menu li a {
-    text-align: center;
-	height: 32px;
-  	voice-family: "\"}\""; 
-  	voice-family: inherit;
-  	height: 24px;
-	text-decoration: none;
-	}	
-	
-#menu li a:link, #menu li a:visited {
-	color: #333;
-    display: block;
-    background: url(menu.gif);
-	padding: 8px 0 0 10px;
-	}
-	
-#menu li a:hover {
-	color: #FFF;
-	background:  url(menu.gif) 0 -32px;
-	padding: 8px 0 0 10px;
-	}
