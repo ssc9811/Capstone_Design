@@ -2,16 +2,22 @@ from flask import Flask , render_template, request, redirect
 from google_news import search_news, headline_news
 from naver_weather import naver_weather
 from fortune import extract_fortune
-# from naver_movie_rank import naver_movie
+from naver_movie_rank import naver_movie
+from naver_on_screen import on_screen
 from select_movie_rank import select_movie
 from select_on_screen import select_on
-from naver_on_screen import on_screen
 from english import r1, r2, r3
 
 
 app = Flask(__name__)
 app.debug = True
 
+
+@app.route('/')
+def main():
+    headline = headline_news()
+    weather = naver_weather()
+    return render_template("index.html", headline=headline, weather=weather)
 
 @app.route("/login")
 def login():
@@ -21,17 +27,11 @@ def login():
 def account():
     return render_template("account.html")
 
-@app.route('/')
+@app.route("/home")
 def home():
     headline = headline_news()
     weather = naver_weather()
-    return render_template("index.html", headline=headline, weather=weather)
-
-
-@app.route("/home")
-def test():
-    weather = naver_weather()
-    return render_template("home.html",weather=weather)
+    return render_template("home.html",weather=weather, headline=headline)
 
 @app.route("/report")
 def news():

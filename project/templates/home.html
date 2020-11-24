@@ -4,7 +4,7 @@
 <head>
   <meta charset="UTF-8">
   <title>메인 화면</title>
-  <!-- <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}"> -->
+  <link rel="stylesheet" href="{{ url_for('static', filename='css/main.css')}}">
 </head>
 <body>
 
@@ -17,6 +17,7 @@
       <span><a href='{{a.link}}' target="_blank">{{a.title}}</a></span><br>
       {% endfor %}
     </section>
+
     <form action="/report" method="get">
       <input type="text" name="title" placeholder="News Search">
       <input type="submit" value="검색"><br><br>
