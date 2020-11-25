@@ -34,7 +34,7 @@
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
-				<form class="login100-form validate-form">
+				<form class="login100-form validate-form" action="/login" method="POST">
 					<span class="login100-form-title p-b-26">
 						Daily News
 					</span>
@@ -44,35 +44,35 @@
 
 					</span>
 
-					<div class="wrap-input100 validate-input" data-validate="Valid email is: a@b.c">
-						<input class="input100" type="text" name="email">
+					<div class="wrap-input100 validate-input" data-validate="아이디를 입력해주세요">
+						<input class="input100" type="text" name="id">
 						<span class="focus-input100" data-placeholder="Id"></span>
 					</div>
 
-					<div class="wrap-input100 validate-input" data-validate="Enter password">
+					<div class="wrap-input100 validate-input" data-validate="비밀번호를 입력해주세요">
 						<span class="btn-show-pass">
 							<i class="zmdi zmdi-eye"></i>
 						</span>
-						<input class="input100" type="password" name="pass">
+						<input class="input100" type="password" name="pw">
 						<span class="focus-input100" data-placeholder="Password"></span>
 					</div>
 
 					<div class="container-login100-form-btn">
 						<div class="wrap-login100-form-btn">
 							<div class="login100-form-bgbtn"></div>
-							<button class="login100-form-btn">
+							<button class="login100-form-btn" action="/login" method="POST">
 								Login
 							</button>
 						</div>
 					</div>
 
-					<div class="text-center p-t-115">
-
-
-						<a class="txt2" href="/account">
-							회원가입
-						</a>
-					</div>
+					<form class="login100-form validate-form" action="/register" method="GET">
+						<div class="text-center p-t-115">
+							<a class="txt2" href="/register">
+								회원가입
+							</a>
+						</div>
+					</form>
 				</form>
 			</div>
 		</div>

@@ -14,7 +14,6 @@ def search_fortune():
         res.raise_for_status()
         soup = BeautifulSoup(res.text, "lxml")
         fortune.append(soup.find("p",{"class":"text _cs_fortune_text"}).get_text())
-    print(fortune)
     return fortune
 
 
