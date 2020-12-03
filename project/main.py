@@ -77,14 +77,12 @@ def en():
 
 @app.route('/', methods=['GET'])
 def index():
-    
     return render_template('login.html')
 
 @app.route('/register', methods=['GET'])
 def register():
     return render_template('register.html')
-
-    return render_template('login.html')
+    
 @app.route('/confirm_register', methods=['POST'])
 def confirm_register():
     db = pymysql.connect(user='root', passwd='1234', host='127.0.0.1', db='daliydb', charset='utf8')
@@ -92,18 +90,25 @@ def confirm_register():
     if request.method == 'POST':
         register_info = request.form
         id = register_info['id']
-        first_name = register_info['first_name']
-        last_name = register_info['last_name']
-        name = first_name+last_name
+        name = register_info['first_name']+register_info['last_name']
         pw = bcrypt.hashpw(register_info['pw'].encode('UTF-8'), bcrypt.gensalt())
-        pw_verify = bcrypt.hashpw(register_info['pw_verify'].encode('UTF-8'), bcrypt.gensalt())
+        c_pw = register_info['pw']
+        c_pw_v = register_info['pw_verify']
         email = register_info['email']
         tel = '010'+register_info['tel']
-        print(id,name,pw,pw_verify,email,tel)
-        sql = """insert into member (id,hashed_pw,name,email,tel) values(%s,%s,%s,%s,%s);"""
-        cursor.execute(sql,(id,pw,name,email,tel))
-        db.commit()
-        db.close()
+
+        # ispw_verify = bcrypt.checkpw(pw, pw_verify)
+
+        if(id == ''):
+            print("Please enter account.")
+        elif(c_pw != c_pw_v):
+            print("Password does not correct, Please confirm the password.")
+        else:
+            print(id,name,pw,email,tel)
+            sql = """insert into member (id,hashed_pw,name,email,tel) values(%s,%s,%s,%s,%s);"""
+            cursor.execute(sql,(id,pw,name,email,tel))
+            db.commit()
+            db.close()
 
         return redirect("/")
     
@@ -112,6 +117,7 @@ def confirm_register():
 
 @app.route('/login', methods=['POST'])
 def login():
+    page = "/home"
     db = pymysql.connect(user='root', passwd='1234', host='127.0.0.1', db='daliydb', charset='utf8')
     cursor = db.cursor(pymysql.cursors.Cursor)
     if request.method == 'POST':
@@ -129,11 +135,14 @@ def login():
 
             is_pw_verify = bcrypt.checkpw(user_pw.encode('UTF-8'), user_info[1].encode('UTF-8'))
             print("password check : ",is_pw_verify)
+            if is_pw_verify == False:
+                page = "/"
 
         else:
             print("User does not exist")
+            page = "/"
         db.close()
-        return redirect("/home")
+        return redirect(page)
     
     return render_template('login.html')
 
