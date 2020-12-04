@@ -1,7 +1,7 @@
 import requests
 from bs4 import BeautifulSoup 
 
-headers = {"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/87.0.4280.66 Safari/537.36"}
+headers = {"User-Agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/86.0.4240.75 Safari/537.36"}
 
 
 def creat_soup(SEARCH): #이 함수를 통합할수는 없을까?

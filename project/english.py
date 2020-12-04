@@ -28,7 +28,7 @@ def en_con():
         except AttributeError as e:
             continue
     return r_con
-
+browser.find_element_by_xpath('/html/body/div[5]/div[1]/div[4]/a[2]').click()
 e1= en_con()
 browser.find_element_by_xpath('//*[@id="main_content"]/ul/li[2]').click()
 browser.find_element_by_xpath('//*[@id="main_content"]/ul/li[3]').click()

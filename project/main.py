@@ -137,6 +137,8 @@ def login():
             print("password check : ",is_pw_verify)
             if is_pw_verify == False:
                 page = "/"
+            on_screen()
+            naver_movie()
 
         else:
             print("User does not exist")
